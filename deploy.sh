@@ -15,7 +15,7 @@ sudo systemctl restart docker
 sudo docker build -t localhost:32000/mynginx:latest .
 sudo docker tag localhost:32000/mynginx:latest localhost:32000/mynginx:latest
 echo "pushing image to local repo"
-sleep 30s
+sleep 1m
 sudo docker push localhost:32000/mynginx:latest
 sudo snap alias microk8s.kubectl kubectl
 kubectl create -f nginx.yaml
