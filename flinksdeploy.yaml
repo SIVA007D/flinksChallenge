@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flinks
+  namespace: flinks
+  labels:
+    uri: challenge.domain.local
+spec:
+  selector:
+    matchLabels:
+      uri: challenge.domain.local
+  template:
+    metadata:
+      labels:
+        uri: challenge.domain.local
+    spec:
+      containers:
+        - name: nginx
+          image: localhost:32000/mynginx:latest
+          ports:
+            - containerPort: 80
