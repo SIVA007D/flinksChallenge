@@ -19,7 +19,7 @@ sleep 30s
 sudo docker push localhost:32000/mynginx:latest
 sudo snap alias microk8s.kubectl kubectl
 kubectl create -f nginx.yaml
-kubectl create -f namespace.yaml -f flinksdeploy.yaml -f flinkssvc.yaml -f flinksing.yaml
+kubectl create -f flinksApp.yaml
 IP=$(curl ifconfig.me | awk '{print $1}')
 HOSTNAME="challenge.domain.local"
 HOST="${IP} ${HOSTNAME}"
